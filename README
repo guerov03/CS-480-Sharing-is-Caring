@@ -1,0 +1,35 @@
+CS480 Summer 2026 Assignment 1
+
+Group Members:
+Chris Palomares - cssc3146
+Eduardo Valdovinos
+
+Project Description:
+This program create seven chatbot threads. Each thread writes a quote to a shared file named QUOTE.txt. A POSIX semaphore named FLAG is used so that only one thread can write to the file at a time. This prevents the file contents from becoming corrupted.
+
+Files:
+bots.cpp	- Main source file containing the thread and semaphore logic
+bots.h		- Header file
+Makefile	- Builds the executable named bots
+README		- Project information and instructions
+
+How to Compile:
+make
+
+How to Run:
+./bots
+
+How to Clean:
+make clean
+
+Program Behavior:
+When the program starts, it creates QUOTE.txt and writes the process ID.
+Then it creates seven threads. Even numbered threads write the Brian
+Kernighan quote every 2 seconds. Odd numbered threads write the Edsger
+Dijkstra quote every 3 seconds. Each thread writes to the file 8 total times.
+The semaphore FLAG protects the shared file during each write.
+
+Testing:
+The program was compiled and tested on edoras using g++ and pthreads.
+After running, QUOTE.txt contained the process ID followed by the thread quote 
+entries.
