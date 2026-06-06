@@ -30,18 +30,18 @@ void* botThread(void* arg)
 
 		if (threadNum % 2 == 0)
 		{
-			quoteFile << "Thread " << pthread_self()
-				  << ": \"Controlling complexity is the essence of computer programming.\"\r\n" 
-				  << " --Brian Kernighan\r\n";
+			quoteFile << "Thread ID " << threadNum
+				  << ": \"Controlling complexity is the essence of computer programming.\" --Brian Kernighan"
+				  << endl;
 	}
 	else
 	{
-		quoteFile << "Thread " << pthread_self()
-			  << ": \"Computer science is no more about computers than astronomy is about telescopes.\"\r\n"
-			  << " --Edsger Dijkstra\r\n";
+		quoteFile << "Thread ID " << threadNum
+			  << ": \"Computer science is no more about computers than astronomy is about telescopes.\" --Edsger Dijkstra"
+			  << endl;
 	}
 	
-	cout << "Thread " << pthread_self() << " is running" << endl;
+	cout << "Thread " << threadNum << " is running" << endl;
 
 	quoteFile.close();
 
@@ -68,7 +68,8 @@ int main()
 	// Create 7 threads
 	for (int i = 0; i < 7; i++)
 	{
-		threadNums[i] = i;
+		threadNums[i] = i + 1;
+		cout << "Creating thread, in main(): " << threadNums[i] << endl;
 		pthread_create(&threads[i], NULL, botThread, &threadNums[i]);
 }
 
