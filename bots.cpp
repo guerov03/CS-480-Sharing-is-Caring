@@ -68,7 +68,7 @@ int main()
 	// Create 7 threads
 	for (int i = 0; i < 7; i++)
 	{
-		threadNums[i] = i + 1;
+		threadNums[i] = i + 1; // + 1 ensures 1-7 and not 0-6
 		cout << "Creating thread, in main(): " << threadNums[i] << endl;
 		pthread_create(&threads[i], NULL, botThread, &threadNums[i]);
 }
