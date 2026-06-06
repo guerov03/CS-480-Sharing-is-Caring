@@ -14,7 +14,7 @@ void* botThread(void* arg)
 {
 	int threadNum = *((int*)arg);
 	
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 8; i++) // Each thread writes its quote  8 times
 	{
 		// Even threads wait 2 seconds, odd threads wait 3 seconds
 		if (threadNum % 2 == 0)

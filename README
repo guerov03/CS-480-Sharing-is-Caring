@@ -1,8 +1,8 @@
 CS480 Summer 2026 Assignment 1
 
 Group Members:
-Chris Palomares - cssc3146 --> Please use this account for grading.
-Eduardo Valdovinos - cssc3166
+Chris Palomares - cssc3146
+Eduardo Valdovinos - cssc3166 --> Please use this account for grading.
 
 Project Description:
 This program create seven chatbot threads. Each thread writes a quote to a shared file named QUOTE.txt. 
